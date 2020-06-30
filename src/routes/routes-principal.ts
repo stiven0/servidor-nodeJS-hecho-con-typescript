@@ -15,7 +15,7 @@
   const storage = diskStorage({
     destination : resolve(__dirname, '../uploads'),
     filename : (req, file, cb) => {
-      cb(null, uuid() + extname(req.file.originalname))
+      cb(null, uuid() + extname(file.originalname))
     }
   });
   const mullterConfig = multer({storage});

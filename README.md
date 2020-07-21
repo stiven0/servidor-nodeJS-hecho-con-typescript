@@ -2,11 +2,18 @@
   # Esquema basico de un servidor de nodeJS desarrollado con typescript
 
 
-  ## En este servidor encontraremos algunos paquetes necesarios para realizar una API rest correctamente
+  * En este servidor encontraremos algunos paquetes necesarios para realizar una API REST de nodeJS utilizando typescript
 
 
+  ### Requisitos principales 📋
 
-  Recuerden para reconstruir los modulos de node
+  - Tener instalado nodeJS
+  - Tener instalado mongodb
+
+
+  ### Instalación 🔧
+
+  Comando para reconstruir los modulos de node
 
   ```
   npm install

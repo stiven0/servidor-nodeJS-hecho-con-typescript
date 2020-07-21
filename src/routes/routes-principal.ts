@@ -1,30 +1,38 @@
 
+  import { resolve, extname } from 'path';
+
   import { Router } from 'express';
   import multer, { diskStorage } from 'multer';
-  import { resolve, extname } from 'path';
   import { uuid } from 'uuidv4';
 
   // constrollers
-  import { principal } from '../controllers/principal';
+  import * as metodosPrincipales from '../controllers/principal';
 
   // midllewares
   import verificarToken from '../middlewares/token';
-
-
-  // multer config
+  
+  // config storage multer
   const storage = diskStorage({
-    destination : resolve(__dirname, '../uploads'),
-    filename : (req, file, cb) => {
-      cb(null, uuid() + extname(file.originalname))
-    }
+    destination: resolve(__dirname, '../uploads'),
+    filename : (req, file, cb) => cb(null, uuid() + extname(file.originalname))
   });
-  const mullterConfig = multer({storage});
 
+  // config the uploads files
+  const uploadConfig = multer({
+    fileFilter( req, file, next ) {
+      if ( file.mimetype === 'image/jpeg' || file.mimetype === 'image/png' ) {
+            next(null, true);
+      } else {
+          next(null, false);
+      }
+    },
+    storage
+  })
 
   const router = Router();
 
   // rutas
-  router.get('/', principal);
+  router.get('/', metodosPrincipales.principal);
 
 
   export default router;

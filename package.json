@@ -1,13 +1,14 @@
 {
   "name": "servidor-nodejs-ts",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Servidor de nodeJS hecho con typescript",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=desarrollo nodemon src/index",
     "build": "tsc",
-    "start": "cross-env NODE_ENV=produccion npm run build && node dist/index"
+    "start": "cross-env NODE_ENV=produccion npm run build && node dist/index",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "",
@@ -37,6 +38,7 @@
     "@types/uuidv4": "^5.0.0",
     "chalk": "^4.0.0",
     "cross-env": "^7.0.2",
+    "rimraf": "^3.0.2",
     "ts-node": "^8.10.1",
     "typescript": "^3.9.2"
   }

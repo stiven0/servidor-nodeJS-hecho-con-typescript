@@ -4,9 +4,10 @@
   import { connect } from 'mongoose';
   import chalk from 'chalk';
 
-  const options = {useNewUrlParser : true, useCreateIndex : true, useFindAndModify : false, useUnifiedTopology : true};
+  const options = { useNewUrlParser : true, useCreateIndex : true, 
+                    useFindAndModify : false, useUnifiedTopology : true };
 
-  function serverInit(){
+  const serverInit = () => {
     connect(String(process.env.DATABASE), options)
     .then( _ => {
 

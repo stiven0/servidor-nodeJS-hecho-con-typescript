@@ -7,8 +7,9 @@
 
   ### Requisitos principales 📋
 
-  - Tener instalado nodeJS
+  - Tener instalado nodeJS y npm
   - Tener instalado mongodb
+  - Tener instalado nodemon de manera global
 
 
   ### Instalación 🔧

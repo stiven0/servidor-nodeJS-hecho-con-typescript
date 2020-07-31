@@ -6,7 +6,7 @@
   const app : Application = express();
 
   // import rutas
-  import routesPrincipal from './routes/routes-principal';
+  import routesPrincipal from './routes/principal';
 
   // middlewares
   app.use(helmet());
